@@ -93,8 +93,8 @@ void initialise_video() {
 }
 
 static bool can_open_root_fs() {
-    DIR_ITER *root = diropen("/");
-    if (root) dirclose(root);
+    DIR *root = opendir("/");
+    if (root) closedir(root);
     return (bool)root;
 }
 
@@ -115,7 +115,7 @@ void wait_for_network_initialisation() {
     printf("Waiting for network to initialise...\n");
     if (initialise_network() >= 0) {
         char myIP[16];
-        if (if_config(myIP, NULL, NULL, true) < 0) die("Error reading IP address, exiting");
+        if (if_config(myIP, NULL, NULL, true,256) < 0) die("Error reading IP address, exiting");
         printf("Network initialised.  Wii IP address: %s\n", myIP);
     } else {
         die("Unable to initialise network, exiting");
