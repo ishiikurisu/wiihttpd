@@ -115,7 +115,7 @@ void wait_for_network_initialisation() {
     printf("Waiting for network to initialise...\n");
     if (initialise_network() >= 0) {
         char myIP[16];
-        if (if_config(myIP, NULL, NULL, true,256) < 0) die("Error reading IP address, exiting");
+        if (if_config(myIP, NULL, NULL, true,20) < 0) die("Error reading IP address, exiting");
         printf("Network initialised.  Wii IP address: %s\n", myIP);
     } else {
         die("Unable to initialise network, exiting");
