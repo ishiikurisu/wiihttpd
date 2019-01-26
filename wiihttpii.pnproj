@@ -1,0 +1,1 @@
+<Project name="wiihttpd"><MagicFolder excludeFolders="CVS;.svn" filter="*" name="source" path="source\"><File path="common.c"></File><File path="common.h"></File><File path="wiihttpd.c"></File></MagicFolder><File path="Makefile"></File></Project>
