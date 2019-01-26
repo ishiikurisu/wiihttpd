@@ -559,7 +559,7 @@ static void mainloop() {
 int main(int argc, char **argv) {
 	initialise_video();
 	printf("\x1b[2;0H");
-	printf("Wiihttpd Webserver v0.0.1\n");
+	printf("Wiihttpd Webserver v0.0.2\n");
 	initialise_fat();
 	if (chdir("/")) die("Could not change to root directory, exiting.\n");
 	WPAD_Init();

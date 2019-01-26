@@ -107,7 +107,11 @@ void initialise_fat() {
 
 static s32 initialise_network() {
     s32 result;
-    while ((result = net_init()) == -EAGAIN);
+    result = net_init();
+    while (result == -EAGAIN) {
+        printf("#! net init %d\n", result);
+        result = net_init();
+    }
     return result;
 }
 
